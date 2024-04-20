@@ -20,6 +20,7 @@ export class ConfigSelectionComponent implements OnInit {
   colors: ColorOption[] = [];
   configData !: Subscription;
   currentConfigSelect: ConfigurationOption | null = null;
+  modelInformation!:ConfigInformation;
   constructor(
     private teslaDataService: TeslaDataService,
     private stepDataService: StepDataService
@@ -40,6 +41,7 @@ export class ConfigSelectionComponent implements OnInit {
       if (model && model.modelSelect) {
         this.selectedModel = model.currentModel;
         this.teslaDataService.getConfigs(model.modelSelect).subscribe((configData: ConfigInformation) => {
+          this.modelInformation = configData;
           this.configs = configData.configs || [];
           this.updateOptionCheckboxes(configData);
           if (this.configs.length > 0) {
