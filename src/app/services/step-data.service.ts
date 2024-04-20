@@ -9,7 +9,7 @@ export class StepDataService {
   selectedModel = new BehaviorSubject<CarModel | null>(null);
   step1Model = new BehaviorSubject<stepModal | null>(null);
   step2Model = new BehaviorSubject<stepModal | null>(null);
-  getModelsValue(): Observable<Object> {
+  getModelsValue(): Observable<CarModel[]> {
     return this.modelList.asObservable();
   }
   setModelValue(settings: CarModel[]): void {

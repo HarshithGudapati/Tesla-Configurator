@@ -12,11 +12,11 @@
           <option *ngFor="let config of configs" value="{{ config.id }}">{{ config.description }}</option>
         </select>
       </div>
-      <div class="col-md-6 mb-3">
+      <div *ngIf="modelInformation.towHitch" class="col-md-6 mb-3">
         <label for="includeTow" class="form-label">Tow hitch?</label>
         <input type="checkbox" id="includeTow" (change)="onCheckChange($event)" formControlName="includeTow">
       </div>
-      <div class="col-md-6 mb-3">
+      <div *ngIf="modelInformation.yoke" class="col-md-6 mb-3">
         <label for="includeYoke" class="form-label">Yoke steering wheel?</label>
         <input type="checkbox" id="includeYoke" (change)="onCheckChange($event)" formControlName="includeYoke">
       </div>

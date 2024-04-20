@@ -31,7 +31,7 @@ export class SummaryComponent implements OnInit, OnDestroy {
   }
   setUpColorAndCalculateTotal(model: stepModal): void {
     const configPrice = model.configSelectModel?.price ?? 0;
-    this.colorObject = model.currentColors.find((e: any) => e.code === model.colorSelect) as ColorOption;
+    this.colorObject = model.currentColors.find((e: ColorOption) => e.code === model.colorSelect) as ColorOption;
     const colorPrice = this.colorObject.price;
     const towPrice = model.includeTow ? 1000 : 0;
     const yokePrice = model.includeYoke ? 1000 : 0;
